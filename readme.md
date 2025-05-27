@@ -5,7 +5,7 @@ Official Pytorch Implementation of Paper - [Cor2Vox: 3D Shape-to-Image Brownian 
 [![Preprint](https://img.shields.io/badge/arXiv-2303.07717-b31b1b)](https://arxiv.org/abs/2410.23219)
 
 <p align="center">
-  <img src="img/c2v.png" />
+  <img src="c2v.png" />
 </p>
 
 ## Installation
@@ -47,7 +47,7 @@ sh test_c2v.sh
 for evaluation.
 
 ## Acknowledgement
-Our code is implemented based on the BBDM [BBDM](https://github.com/xuekt98/BBDM), thanks!
+Our code is implemented based on the [BBDM](https://github.com/xuekt98/BBDM), thanks!
 
 ## Citation
 If you find this repository useful, please consider giving a star 🌟 and citing the paper:
