@@ -1,0 +1,108 @@
+# Cor2Vox Configuration File
+runner: "c2v_BBDMRunner"
+training:
+  n_epochs: 400
+  n_steps: 80000000
+  save_interval: 4
+  sample_interval: 40
+  validation_interval: 4
+  accumulate_grad_batches: 2
+
+testing:
+  clip_denoised: True
+  sample_num: 8
+  save_syn_scans: True
+
+data:
+  dataset_name: 'c2v'
+  dataset_type: 'c2v'
+  dataset_config:
+    img_folder: '/data/to/mri_images'
+    shape_folder: '/data/to/sdf_pial'
+    shape_folder_2: '/data/to/sdf_white'
+    condition_folder: '/data/to/condition1'
+    condition_folder_2: '/data/to/condition2'
+    condition_folder_3: '/data/to/condition3'
+    condition_folder_4: '/data/to/condition4'
+    input_size: 128
+    depth_size: 128
+    to_normal: True
+  train:
+    batch_size: 2
+    shuffle: True
+  val:
+    batch_size: 2
+    shuffle: True
+  test:
+    batch_size: 1
+    shuffle: False
+
+model:
+  model_name: "c2v" # part of result path
+  model_type: "BBDM_c2v" # specify a module
+  latent_before_quant_conv: False
+  model_load_path: '/checkpoint/model.pth' # model checkpoint path
+  optim_sche_load_path: '/checkpoint/optim_sche.pth' # optimizer scheduler checkpoint path
+
+  EMA:
+    use_ema: True
+    ema_decay: 0.995
+    update_ema_interval: 8 # step
+    start_ema_step: 30000
+
+  CondStageParams:
+    n_stages: 2
+    in_channels: 2
+    out_channels: 1
+
+  BB:
+    optimizer:
+      weight_decay: 0.000
+      optimizer: 'Adam'
+      lr: 1.e-4
+      beta1: 0.9
+
+    lr_scheduler:
+      factor: 0.5
+      patience: 3000
+      threshold: 0.0001
+      cooldown: 3000
+      min_lr: 5.e-7
+
+    params:
+      mt_type: 'linear' # options {'linear', 'sin'}
+      objective: 'ysubx' # options {'grad', 'noise', 'ysubx'}
+      loss_type: 'l1' # options {'l1', 'l2'}
+
+      skip_sample: True
+      sample_type: 'linear' # options {"linear", "sin"}
+      sample_step: 10
+
+      num_timesteps: 1000 # timesteps
+      eta: 1.0 # DDIM reverse process eta
+      max_var: 1.0 # maximum variance
+
+      UNetParams:
+        dims: 3
+        image_size: 128
+        in_channels: 6 # depending on the number of extra conditions
+        model_channels: 64
+        out_channels: 1
+        num_res_blocks: 2
+        use_fp16: False
+        attention_resolutions: !!python/tuple
+          - 16
+          - 8
+        channel_mult: !!python/tuple
+          - 1
+          - 2
+          - 3
+          - 4
+        conv_resample: True
+        num_heads: 8
+        num_head_channels: 64
+        use_scale_shift_norm: True
+        resblock_updown: True
+        use_spatial_transformer: False
+        context_dim:
+        condition_key: "SpatialRescaler" # options {"SpatialRescaler", "first_stage", "nocond"}
