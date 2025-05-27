@@ -2,7 +2,7 @@
 
 Official Pytorch Implementation of Paper - [Cor2Vox: 3D Shape-to-Image Brownian Bridge Diffusion for Brain MRI Synthesis from Cortical Surfaces](https://arxiv.org/abs/2502.12742) - Accepted by [IPMI 2025](https://ipmi2025.org/)
 
-[![Preprint](https://img.shields.io/badge/arXiv-2303.07717-b31b1b)](https://arxiv.org/abs/2502.12742)
+[![Preprint](https://img.shields.io/badge/arXiv-2502.12742-b31b1b)](https://arxiv.org/abs/2502.12742)
 
 <p align="center">
   <img src="c2v.png" />
