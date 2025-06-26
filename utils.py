@@ -4,6 +4,7 @@ import omegaconf.dictconfig
 
 from Register import Registers
 
+from runners.DiffusionBasedModelRunners.BBDMRunner import c2v_BBDMRunner
 
 def dict2namespace(config):
     namespace = argparse.Namespace()
