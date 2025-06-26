@@ -137,4 +137,9 @@ class c2v_BBDMRunner(DiffusionBaseRunner):
         sample = net.sample(x_cond, condition=condition, clip_denoised=self.config.testing.clip_denoised)
         
         return x, sample
+        
+    @torch.no_grad()
+    def sample_to_eval(self, net, test_loader, sample_path):
+        pass
+
 
