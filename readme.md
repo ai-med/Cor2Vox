@@ -3,6 +3,7 @@
 Official Pytorch Implementation of Paper - [Cor2Vox: 3D Shape-to-Image Brownian Bridge Diffusion for Brain MRI Synthesis from Cortical Surfaces](https://arxiv.org/abs/2502.12742) - Accepted by [IPMI 2025](https://ipmi2025.org/)
 
 [![Preprint](https://img.shields.io/badge/arXiv-2502.12742-b31b1b)](https://arxiv.org/abs/2502.12742)
+[![Conference Paper](https://img.shields.io/static/v1?label=DOI&message=10.1007%978-3-031-96628-6_13&color=3a7ebb)](https://doi.org/10.1007/978-3-031-96628-6_13)
 
 <p align="center">
   <img src="c2v.png" />
@@ -53,10 +54,12 @@ Our code is implemented based on the [BBDM](https://github.com/xuekt98/BBDM), th
 If you find this repository useful, please consider giving a star 🌟 and citing the paper:
 
 ```
-@article{bongratz20253d,
+@inproceedings{bongratz20253d,
   title={3D Shape-to-Image Brownian Bridge Diffusion for Brain MRI Synthesis from Cortical Surfaces},
   author={Bongratz, Fabian and Li, Yitong and Elbaroudy, Sama and Wachinger, Christian},
-  journal={arXiv preprint arXiv:2502.12742},
-  year={2025}
+  booktitle={International Conference on Information Processing in Medical Imaging},
+  pages={187--202},
+  year={2025},
+  organization={Springer}
 }
 ```
