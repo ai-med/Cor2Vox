@@ -1,12 +1,12 @@
-# 3D Shape-to-Image Brownian Bridge Diffusion for Brain MRI Synthesis from Cortical Surfaces
+# Cortex-Grounded Diffusion Models for Brain Image Generation
 
-Official Pytorch Implementation of Paper - [Cor2Vox: 3D Shape-to-Image Brownian Bridge Diffusion for Brain MRI Synthesis from Cortical Surfaces](https://arxiv.org/abs/2502.12742) - Accepted by [IPMI 2025](https://ipmi2025.org/)
+Official Pytorch Implementation of Paper - [Cortex-Grounded Diffusion Models for Brain Image Generation](https://arxiv.org/abs/2502.12742) 
 
 [![Preprint](https://img.shields.io/badge/arXiv-2502.12742-b31b1b)](https://arxiv.org/abs/2502.12742)
 [![Conference Paper](https://img.shields.io/static/v1?label=DOI&message=10.1007%2f978-3-031-96628-6_13&color=3a7ebb)](https://doi.org/10.1007/978-3-031-96628-6_13)
 
 <p align="center">
-  <img src="c2v.png" />
+  <img src="framework.png" />
 </p>
 
 ## Installation
