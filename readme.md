@@ -10,7 +10,7 @@ Official Pytorch Implementation of Paper - [Cortex-Grounded Diffusion Models for
 </p>
 
 ## Installation
-1. Create environment: `cond env create -n c2v --file c2v_env.yml`
+1. Create environment: `conda env create -n c2v --file c2v_env.yml`
 2. Activate environment: `conda activate c2v`
 
 
